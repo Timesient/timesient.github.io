@@ -18,9 +18,8 @@ figure {
   margin: 0;
   padding: 0;
 }
-@import url("//fonts.googleapis.com/earlyaccess/notosanssc.css");
 html {
-  font-family: 'Roboto', 'Microsoft YaHei', 'Noto Sans SC';
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB';
   height: 100%;
 }
 a {
@@ -217,7 +216,7 @@ body {
   box-sizing: border-box;
   background-color: #f6f6f6;
   font-size: 0.9rem;
-  font-family: "Roboto Mono";
+  font-family: Consolas, "Source Code Pro", "Courier New";
 }
 .post-content ul,
 .post-content ol {
@@ -254,8 +253,8 @@ body {
   top: 0;
   left: 0;
   color: #fff;
-  font-family: "Roboto Mono";
-  font-size: 0.8rem;
+  font-family: Consolas, "Source Code Pro", "Courier New";
+  font-size: 0.9rem;
   text-indent: 1rem;
   line-height: 1.5rem;
 }
@@ -288,8 +287,8 @@ body {
 .post-content .highlight span,
 .post-content .highlight .line {
   color: #fff;
-  font-size: 0.8rem;
-  font-family: "Roboto Mono";
+  font-size: 0.9rem;
+  font-family: Consolas, "Source Code Pro", "Courier New";
 }
 .post-content .highlight span::selection,
 .post-content .highlight .line::selection {
@@ -361,7 +360,7 @@ footer .owner a {
 }
 .archive-container .archive-year {
   font-size: 1.5rem;
-  font-family: "Roboto Mono";
+  font-family: Consolas, "Source Code Pro", "Courier New";
   color: #ffa500;
 }
 .archive-container .archive-year:nth-child(n+2) {
@@ -376,7 +375,7 @@ footer .owner a {
   margin-right: 0.5rem;
   color: #aaa;
   font-size: 1rem;
-  font-family: "Roboto mono";
+  font-family: Consolas, "Source Code Pro", "Courier New";
 }
 .archive-container .archive-item .archive-title {
   color: #555;
@@ -392,7 +391,7 @@ footer .owner a {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  font-family: "Roboto Mono";
+  font-family: Consolas, "Source Code Pro", "Courier New";
 }
 .about-container .about-avatar {
   max-height: 256px;
