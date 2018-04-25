@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Timesient</title>
+  <meta name="author" content="Timesient">
+  <meta name="description" content="Timesient&#39;s Blog">
+  <meta name="keywords" content="Timesient, Blog">
+  <meta property="og:title" content="Timesient">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://timesient.github.io/index.html">
+  <meta property="og:site_name" content="Timesient">
+  <meta property="og:description" content="Timesient&#39;s Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+  <link href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+  <a class="title" href="/">Timesient</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/archives">Archives</a>
+    <a href="/about">About</a>
+  </nav>
+</header>
+
+    <div class="main-container">
+  
+
+<article class="post">
+  <header class="post-header">
+    
+      <h1 class="post-title"><a class="in-index" href="/post/2018-04-25-blog-post-workflow/">发表文章工作流</a></h1>
+    
+  </header>
+  
+    <div class="post-content"><p>步骤如下：</p>
+<ol>
+<li>在根目录下<code>hexo new example</code></li>
+<li>启动hexo实时编译服务器<code>hexo s</code></li>
+<li>右键根目录空白区域，使用<code>VSCode</code>打开工程</li>
+<li>注释掉<code>themes/timesient/source/js/main.js</code>中与<code>loadingImgBase64</code>有关的2行注释掉</li>
+<li>工程中打开<code>source/_posts/example.md</code>开始书写；同时打开浏览器<code>localhost:4000</code>实时查看文章书写进度</li>
+<li>注意将<code>example.md</code>中开头的<code>title</code>内容换成文章的标题</li>
+<li>在需要插入<code>Read More</code>的地方插入<code>&lt;!--more--&gt;</code></li>
+<li>书写完毕后，将<code>main.js</code>中注释的两行取消注释</li>
+<li>关闭<code>VSCode</code></li>
+<li>根目录下打开<code>bash</code>，执行<code>npm run build</code>生成<code>public</code>文件夹</li>
+<li>执行<code>hexo d</code>将文章提交到远端仓库</li>
+</ol></div>
+    
+     <p class="read-more-link">
+       <a href="/post/2018-04-25-blog-post-workflow/">Read More</a>
+     </p>
+    
+  
+</article>
+
+
+  
+
+<article class="post">
+  <header class="post-header">
+    
+      <h1 class="post-title"><a class="in-index" href="/post/2017-04-06-git-commands-collection/">Git命令汇总</a></h1>
+    
+  </header>
+  
+    <div class="post-content"><p>在百度脑图上边学git命令边制作的思维导图，更多的解释性内容写在了备注当中，但是无法一并导出，所以想看完整版的话请点击该 <a href="http://naotu.baidu.com/file/988c345b2cf25530e4c607be56dda5bc?token=1353c2d268328e5e" target="_blank" rel="noopener">链接</a>。</p>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2017-04-06-git-commands-collection/git.svg" title="Git Commands Collection"></div>
+    
+     <p class="read-more-link">
+       <a href="/post/2017-04-06-git-commands-collection/">Read More</a>
+     </p>
+    
+  
+</article>
+
+
+
+
+</div>
+    <footer>
+  <span class="owner">Made by <a href="https://github.com/Timesient" target="_blank">Timesient</a></span>
+</footer>
+
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
