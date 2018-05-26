@@ -455,6 +455,7 @@ footer .owner a {
   color: #aaa;
   font-size: 1rem;
   font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+  white-space: nowrap;
 }
 .archive-container .archive-item .archive-title {
   color: #555;
