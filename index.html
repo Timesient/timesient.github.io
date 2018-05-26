@@ -36,6 +36,34 @@
 <article class="post">
   <header class="post-header">
     
+      <h1 class="post-title"><a class="in-index" href="/post/2018-05-26-callback-in-addEventListener-and-removeEventListener/">addEventListener与removeEventListener中的回调函数</a></h1>
+    
+  </header>
+  
+    <div class="post-content"><h2 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h2><p>如下面的示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.msg = <span class="string">"hello"</span>;</span><br><span class="line">    <span class="keyword">this</span>.add();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handle(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg);</span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>在一个类中，需要为<code>document</code>添加一个<code>click</code>事件监听器</li>
+<li>该<code>click</code>事件的回调函数<code>handle</code>中需要用到该类中的<code>this</code>属性</li>
+<li><code>handle</code>中的<code>this</code>默认会指向<code>document</code></li>
+<li>因此需要使用<code>bind</code>方法给<code>handle</code>显示绑定类中的<code>this</code></li>
+<li><code>click</code>事件发生，触发回调函数</li>
+<li>正常情况下，控制台会输出<code>hello</code>，并且<code>document</code>会移除<code>click</code>事件监听器</li>
+</ol>
+<p>然而实际情况是，控制台输出了<code>hello</code>，但<code>document</code>并没有移除<code>click</code>事件监听器。继续点击鼠标，控制台会继续输出<code>hello</code>。</p></div>
+    
+     <p class="read-more-link">
+       <a href="/post/2018-05-26-callback-in-addEventListener-and-removeEventListener/">Read More</a>
+     </p>
+    
+  
+</article>
+
+
+  
+
+<article class="post">
+  <header class="post-header">
+    
       <h1 class="post-title"><a class="in-index" href="/post/2018-04-25-blog-post-workflow/">发表文章工作流</a></h1>
     
   </header>
