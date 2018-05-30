@@ -468,6 +468,74 @@ footer .owner a {
 .archive-container .archive-item .archive-title:hover {
   color: #ffa500;
 }
+.works-container {
+  width: 90%;
+  margin-top: 1.5rem;
+}
+.works-container .work-type-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  margin-bottom: 0.8rem;
+}
+.works-container .work-type-container .work-type {
+  color: #ffa500;
+  font-size: 1.4rem;
+  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+}
+.works-container .work-type-container .more-btn {
+  height: 1.3rem;
+  margin-left: 1rem;
+  padding: 0 6px;
+  font-size: 1.1rem;
+  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+  line-height: 1.3rem;
+  color: #ffa500;
+  border: 1px solid #ffa500;
+  border-radius: 4px;
+}
+.works-container .work-item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.works-container .work-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 32%;
+  margin-top: 8px;
+  margin-right: 8px;
+  -webkit-box-shadow: 0 1px 1px 1px #d8d8d8;
+  box-shadow: 0 1px 1px 1px #d8d8d8;
+  overflow: hidden;
+}
+.works-container .work-item .work-ss {
+  width: 100%;
+}
+.works-container .work-item .work-name {
+  width: 100%;
+  padding: 1rem 0;
+  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+  text-align: center;
+}
 .about-container {
   display: -webkit-box;
   display: -ms-flexbox;

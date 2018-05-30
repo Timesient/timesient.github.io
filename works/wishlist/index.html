@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Steam Wishlist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./asset/css/normalize.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./asset/css/main.css" />
+</head>
+<body>
+  <div class="page_content_ctn">
+    <div class="page_content">
+      <div class="wishlist_header">
+        <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/15/152c3ffed00bc13a6f0799ec59fd360f305cb06d_full.jpg">
+        <h2>1969 的愿望单</h2>
+      </div>
+      <div class="controls">
+        <div class="filter_tab">排序依据：<span id="label_sort">您自定的顺序</span><img src="./asset/icons/btn_arrow_down_padded_white.png"></div>
+        <div class="filter_tab">显示：<span id="label_type">全部类型</span><img src="./asset/icons/btn_arrow_down_padded_white.png"></div>
+        <div class="filter_tab"><span>筛选条件</span><img src="./asset/icons/btn_arrow_down_padded_white.png"></div>
+        <div class="search">
+          <div class="filter_tab settings_tab"><img src="./asset/icons/icon_settings.png"></div>
+          <input id="wishlist_search" type="text" placeholder="通过名称或标签搜索">
+        </div>
+      </div>
+      <hr>
+      <div class="wishlist_ctn"></div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="./src/main.js"></script>
+</body>
+</html>
