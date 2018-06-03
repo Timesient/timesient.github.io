@@ -365,14 +365,13 @@ body::-webkit-scrollbar-track {
   display: none;
 }
 .post-content .highlight .code {
-  padding: 1rem;
+  padding: 0.5rem 0.75rem;
 }
 .post-content .highlight .code .line {
-  height: 1.2rem;
   color: #444;
   font-size: 0.8rem;
   font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
-  line-height: 1.2rem;
+  line-height: 1.3rem;
 }
 .post-content .html .name {
   color: #e96900;
