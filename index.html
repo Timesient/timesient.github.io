@@ -37,24 +37,16 @@
 <article class="post">
   <header class="post-header">
     
-      <h1 class="post-title"><a class="in-index" href="/post/2018-05-26-callback-in-addEventListener-and-removeEventListener/">addEventListener与removeEventListener中的回调函数</a></h1>
+      <h1 class="post-title"><a class="in-index" href="/post/2018-05-26-callback-function-in-removeEventListener/">Callback Function in removeEventListener</a></h1>
     
   </header>
   
-    <div class="post-content"><h2 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h2><p>如下面的示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.msg = <span class="string">"hello"</span>;</span><br><span class="line">    <span class="keyword">this</span>.add();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handle(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg);</span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>在一个类中，需要为<code>document</code>添加一个<code>click</code>事件监听器</li>
-<li>该<code>click</code>事件的回调函数<code>handle</code>中需要用到该类中的<code>this</code>属性</li>
-<li><code>handle</code>中的<code>this</code>默认会指向<code>document</code></li>
-<li>因此需要使用<code>bind</code>方法给<code>handle</code>显示绑定类中的<code>this</code></li>
-<li><code>click</code>事件发生，触发回调函数</li>
-<li>正常情况下，控制台会输出<code>hello</code>，并且<code>document</code>会移除<code>click</code>事件监听器</li>
-</ol>
-<p>然而实际情况是，控制台输出了<code>hello</code>，但<code>document</code>并没有移除<code>click</code>事件监听器。继续点击鼠标，控制台会继续输出<code>hello</code>。</p></div>
+    <div class="post-content"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>如下面的示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.msg = <span class="string">"hello"</span>;</span><br><span class="line">    <span class="keyword">this</span>.add();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handle(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg);</span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里为<code>document</code>添加一个<code>click</code>事件监听器，其回调函数为<code>handle</code>函数，而<code>handle</code>函数中会移除这个事件监听器。然而实际情况是没有成功移除<code>click</code>事件监听器，继续点击鼠标，控制台会继续输出<code>hello</code>。</p></div>
     
-     <p class="read-more-link">
-       <a href="/post/2018-05-26-callback-in-addEventListener-and-removeEventListener/">Read More</a>
-     </p>
+      <div class="read-more-link">
+        <a href="/post/2018-05-26-callback-function-in-removeEventListener/">Read More</a>
+      </div>
     
   
 </article>
@@ -65,28 +57,23 @@
 <article class="post">
   <header class="post-header">
     
-      <h1 class="post-title"><a class="in-index" href="/post/2018-04-25-blog-post-workflow/">发表文章工作流</a></h1>
+      <h1 class="post-title"><a class="in-index" href="/post/2018-04-25-blog-post-workflow/">Blog Post Workflow</a></h1>
     
   </header>
   
-    <div class="post-content"><p>步骤如下：</p>
+    <div class="post-content"><p>Steps:</p>
 <ol>
-<li>在根目录下<code>hexo new example</code></li>
-<li>启动hexo实时编译服务器<code>hexo s</code></li>
-<li>右键根目录空白区域，使用<code>VSCode</code>打开工程</li>
-<li>注释掉<code>themes/timesient/source/js/main.js</code>中与<code>loadingImgBase64</code>有关的2行注释掉</li>
-<li>工程中打开<code>source/_posts/example.md</code>开始书写；同时打开浏览器<code>localhost:4000</code>实时查看文章书写进度</li>
-<li>注意将<code>example.md</code>中开头的<code>title</code>内容换成文章的标题</li>
-<li>在需要插入<code>Read More</code>的地方插入<code>&lt;!--more--&gt;</code></li>
-<li>书写完毕后，将<code>main.js</code>中注释的两行取消注释</li>
-<li>关闭<code>VSCode</code></li>
-<li>根目录下打开<code>bash</code>，执行<code>npm run build</code>生成<code>public</code>文件夹</li>
-<li>执行<code>hexo d</code>将文章提交到远端仓库</li>
-</ol></div>
+<li>generate new post: <code>hexo new example</code></li>
+<li>activate hexo live server: <code>hexo s</code> and visit localhost:4000 in browser</li>
+<li>write article content in source/_posts/example.md, meanwhile check the content in browser</li>
+<li>remember to edit the title in example.md</li>
+<li>remember to insert <code>&lt;!--more--&gt;</code> where you want to show <code>Read More</code> button</li>
+<li>run <code>npm run build</code> in bash</li>
+<li>run <code>hexo d</code> to deploy changes</div>
     
-     <p class="read-more-link">
-       <a href="/post/2018-04-25-blog-post-workflow/">Read More</a>
-     </p>
+      <div class="read-more-link">
+        <a href="/post/2018-04-25-blog-post-workflow/">Read More</a>
+      </div>
     
   
 </article>
@@ -97,16 +84,35 @@
 <article class="post">
   <header class="post-header">
     
-      <h1 class="post-title"><a class="in-index" href="/post/2017-04-06-git-commands-collection/">Git命令汇总</a></h1>
+      <h1 class="post-title"><a class="in-index" href="/post/2018-04-25-markdown-style-showcase/">Markdown Style Showcase</a></h1>
     
   </header>
   
-    <div class="post-content"><p>在百度脑图上边学git命令边制作的思维导图，更多的解释性内容写在了备注当中，但是无法一并导出，所以想看完整版的话请点击该 <a href="http://naotu.baidu.com/file/988c345b2cf25530e4c607be56dda5bc?token=1353c2d268328e5e" target="_blank" rel="noopener">链接</a>。</p>
+    <div class="post-content"><p>Here shows the markdown style of articles in this blog.<br></div>
+    
+      <div class="read-more-link">
+        <a href="/post/2018-04-25-markdown-style-showcase/">Read More</a>
+      </div>
+    
+  
+</article>
+
+
+  
+
+<article class="post">
+  <header class="post-header">
+    
+      <h1 class="post-title"><a class="in-index" href="/post/2017-04-06-git-commands-collection/">Git Commands Collection</a></h1>
+    
+  </header>
+  
+    <div class="post-content"><p>在百度脑图上边学 git 命令边制作的思维导图，更多的解释性内容写在了备注当中，但是无法一并导出，所以想看完整版的话请点击该 <a href="http://naotu.baidu.com/file/988c345b2cf25530e4c607be56dda5bc?token=1353c2d268328e5e" target="_blank" rel="noopener">链接</a>。</p>
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2017-04-06-git-commands-collection/git.svg" title="Git Commands Collection"></div>
     
-     <p class="read-more-link">
-       <a href="/post/2017-04-06-git-commands-collection/">Read More</a>
-     </p>
+      <div class="read-more-link">
+        <a href="/post/2017-04-06-git-commands-collection/">Read More</a>
+      </div>
     
   
 </article>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Callback Function in removeEventListener</title>
+  <meta name="author" content="Timesient">
+  <meta name="description" content="Timesient&#39;s Blog">
+  <meta name="keywords" content="Timesient, Blog">
+  <meta property="og:title" content="Callback Function in removeEventListener">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://timesient.github.io/post/2018-05-26-callback-function-in-removeEventListener/">
+  <meta property="og:site_name" content="Timesient">
+  <meta property="og:description" content="Timesient&#39;s Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+  <a class="title" href="/">Timesient</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/archives">Archives</a>
+    <a href="/works">Works</a>
+    <a href="/about">About</a>
+  </nav>
+</header>
+
+    <div class="main-container">
+
+<article class="post">
+  <header class="post-header">
+    
+      <h1 class="post-title"><a>Callback Function in removeEventListener</a></h1>
+      <p class="post-detail">Posted on May 26, 2018</p>
+    
+  </header>
+  
+    <div class="post-content"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>如下面的示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.msg = <span class="string">"hello"</span>;</span><br><span class="line">    <span class="keyword">this</span>.add();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handle(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg);</span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.handle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里为<code>document</code>添加一个<code>click</code>事件监听器，其回调函数为<code>handle</code>函数，而<code>handle</code>函数中会移除这个事件监听器。然而实际情况是没有成功移除<code>click</code>事件监听器，继续点击鼠标，控制台会继续输出<code>hello</code>。</p>
+<a id="more"></a>
+<h2 id="Reason"><a href="#Reason" class="headerlink" title="Reason"></a>Reason</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bind()会返回一个新的函数对象，因此：</span></span><br><span class="line"><span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>) === <span class="keyword">this</span>.handle <span class="comment">// false</span></span><br><span class="line"><span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>) === <span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p><code>removeEventListener</code>的回调函数与<code>addEventListener</code>的回调函数不是同一个对象，自然不能成功移除。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>需要实现的两个条件是：</p>
+<ol>
+<li>添加监听器时指定的回调函数必须使用<code>bind</code>绑定该类的<code>this</code></li>
+<li>添加监听器时指定的回调函数必须与移除监听器时指定的是同一个对象</li>
+</ol>
+<p>基于以上条件，我目前能想到的解决方式是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.msg = <span class="string">"hello"</span>;</span><br><span class="line">    <span class="keyword">this</span>.add();</span><br><span class="line">    <span class="comment">// 将handle函数绑定了this之后的新函数的赋值给this的一个属性boundHandle</span></span><br><span class="line">    <span class="keyword">this</span>.boundHandle = <span class="keyword">this</span>.handle.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  add() &#123;</span><br><span class="line">    <span class="comment">// 添加监听器时指定boundHandle函数为回调函数</span></span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.boundHandle);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handle(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.msg);</span><br><span class="line">    <span class="comment">// 移除监听器时指定boundHandle函数为回调函数</span></span><br><span class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">"click"</span>, <span class="keyword">this</span>.boundHandle);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样就能正常移除<code>click</code>监听器了。</p>
+</div>
+  
+</article>
+
+</div>
+    <footer>
+  <span class="owner">Made by <a href="https://github.com/Timesient" target="_blank">Timesient</a></span>
+</footer>
+
+    <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+<script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

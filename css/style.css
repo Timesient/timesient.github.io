@@ -1,6 +1,10 @@
 @font-face {
-  font-family: 'Consolas Backup';
-  src: url("fonts/Consolas.ttf");
+  font-family: 'Consolas';
+  src: url("../assets/fonts/Consolas.ttf");
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("../assets/fonts/SourceSansPro.ttf");
 }
 html,
 body,
@@ -23,7 +27,7 @@ figure {
   padding: 0;
 }
 html {
-  font-family: 'Microsoft YaHei', 'Hiragino Sans GB';
+  font-family: 'Source Sans Pro', 'Microsoft YaHei', 'Hiragino Sans GB';
   height: 100%;
 }
 a {
@@ -33,7 +37,7 @@ a {
 body {
   word-break: break-word;
   height: 100%;
-  background: #ddd;
+  background: #eee;
   background-image: -o-linear-gradient(rgba(255,255,255,0.302) 1px, transparent 0), -o-linear-gradient(left, rgba(255,255,255,0.302) 1px, transparent 0);
   background-image: linear-gradient(rgba(255,255,255,0.302) 1px, transparent 0), linear-gradient(90deg, rgba(255,255,255,0.302) 1px, transparent 0);
   background-size: 8px 8px, 8px 8px;
@@ -74,8 +78,9 @@ body::-webkit-scrollbar-track {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  font-size: 2rem;
-  color: #000;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #444;
 }
 .header nav {
   display: -webkit-box;
@@ -96,10 +101,9 @@ body::-webkit-scrollbar-track {
 .header nav a {
   margin: 0 0.5rem;
   color: #aaa;
-  font-size: 14px;
 }
 .header nav a:hover {
-  color: #ffa500;
+  color: #ffc560;
 }
 .container {
   margin: 5rem auto;
@@ -113,8 +117,8 @@ body::-webkit-scrollbar-track {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #fff;
-  -webkit-box-shadow: 0 2px 10px 2px #ccc;
-  box-shadow: 0 2px 10px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px 2px #ddd;
+  box-shadow: 0 1px 2px 2px #ddd;
 }
 @media screen and (max-width: 960px) {
   .container {
@@ -153,8 +157,8 @@ body::-webkit-scrollbar-track {
   display: block;
   height: 2rem;
   width: 2rem;
-  margin: 0 1rem 1rem 0;
-  border-radius: 10%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   line-height: 2rem;
   color: #aaa;
@@ -165,18 +169,18 @@ body::-webkit-scrollbar-track {
 }
 .pagination-container .current {
   color: #fff;
-  background-color: #555;
+  background-color: #444;
 }
 .pagination-container .current:hover {
   color: #fff;
-  background-color: #555;
+  background-color: #444;
 }
 .pagination-container .extend {
   display: block;
   height: 2rem;
   width: 3rem;
-  margin: 0 1rem 1rem 0;
-  border-radius: 10%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   line-height: 2rem;
   color: #aaa;
@@ -189,8 +193,8 @@ body::-webkit-scrollbar-track {
   display: block;
   height: 2rem;
   width: 2rem;
-  margin: 0 1rem 1rem 0;
-  border-radius: 10%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
   line-height: 1.5rem;
 }
@@ -206,48 +210,75 @@ body::-webkit-scrollbar-track {
 }
 .post-header .post-title {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
-  word-break: break-all;
-}
-.post-header .post-title .in-index:hover {
-  color: #ffa500;
+  font-size: 1.8rem;
+  font-weight: normal;
+  word-break: break-word;
 }
 .post-header .post-title a {
-  color: #000;
-  -webkit-transition: color 0.2s ease-out;
-  -o-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
+  color: #444;
 }
 .post-header .post-detail {
-  color: #555;
+  color: #444;
   font-size: 14px;
 }
 .post-content a {
-  color: #ffa500;
+  color: #ffc560;
 }
 .post-content h1 {
-  font-size: 2rem;
-  margin: 1.2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 8px;
+  color: #444;
+  font-size: 1.8rem;
+  font-weight: normal;
+  border-left: 4px solid #ffc560;
+  background-color: #f8f8f8;
 }
 .post-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding-left: 8px;
+  color: #444;
   font-size: 1.6rem;
-  margin: 1rem 0;
+  font-weight: normal;
+  border-left: 4px solid #ffc560;
+  background-color: #f8f8f8;
 }
 .post-content h3 {
-  font-size: 1.4rem;
   margin: 0.8rem 0;
+  padding-left: 8px;
+  color: #444;
+  font-size: 1.4rem;
+  font-weight: normal;
+  border-left: 4px solid #ffc560;
+  background-color: #f8f8f8;
 }
 .post-content h4 {
-  font-size: 1.2rem;
   margin: 0.6rem 0;
+  padding-left: 8px;
+  color: #444;
+  font-size: 1.2rem;
+  font-weight: normal;
+  border-left: 4px solid #ffc560;
+  background-color: #f8f8f8;
 }
 .post-content h5 {
-  font-size: 1rem;
   margin: 0.6rem 0;
+  padding-left: 8px;
+  color: #444;
+  font-size: 1rem;
+  font-weight: normal;
+  border-left: 4px solid #ffc560;
+  background-color: #f8f8f8;
 }
 .post-content h6 {
-  font-size: 1rem;
   margin: 0.6rem 0;
+  padding-left: 8px;
+  color: #444;
+  font-size: 1rem;
+  font-weight: normal;
+  border-left: 4px solid #ffc560;
+  background-color: #f8f8f8;
 }
 .post-content hr {
   margin: 1rem 0;
@@ -292,20 +323,22 @@ body::-webkit-scrollbar-track {
   color: #e96900;
   background-color: #f8f8f8;
   font-size: 0.9rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
 }
 .post-content ul,
 .post-content ol {
-  margin: 0.8rem 0;
+  margin: 1rem 0;
   padding-left: 1rem;
-  list-style-position: inside;
 }
 .post-content li {
   line-height: 1.5rem;
 }
-.post-content li ul,
 .post-content li ol {
   margin: 0;
+}
+.post-content li ul {
+  margin: 0;
+  list-style-type: disc;
 }
 .post-content blockquote {
   max-width: 100%;
@@ -314,117 +347,87 @@ body::-webkit-scrollbar-track {
 .post-content blockquote p {
   padding: 1rem;
   background-color: #f8f8f8;
-  color: #555;
-  border-left: 5px solid #ddd;
+  color: #444;
+  border-left: 4px solid #ddd;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .post-content .highlight {
-  margin: 1.5rem 0;
-  border-radius: 5px;
   position: relative;
+  margin: 1rem 0;
   overflow: auto;
-  font-size: 16px;
-  -webkit-box-shadow: 0 2px 5px 0 #aaa;
-  box-shadow: 0 2px 5px 0 #aaa;
-  background-color: #292929;
+  background-color: #f8f8f8;
 }
 .post-content .highlight:before {
   content: attr(data-code-type);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 4px;
+  left: 0.5rem;
   color: #fff;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
-  font-size: 0.9rem;
-  text-indent: 1rem;
-  line-height: 1.5rem;
+  font-size: 14px;
+  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
 }
 .post-content .highlight::-webkit-scrollbar-track {
-  background-color: #555;
-  border-radius: 5px;
+  background-color: #ddd;
 }
 .post-content .highlight::-webkit-scrollbar {
-  width: 10px;
+  height: 10px;
 }
 .post-content .highlight::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: #444;
-}
-.post-content .highlight .gutter {
-  padding: 0 1rem 0 0.5rem;
-}
-.post-content .highlight .gutter .line {
-  color: #aaa;
+  background-color: #ffc560;
 }
 .post-content .highlight table {
   width: 100%;
   border-spacing: 0;
-  border-top: 1.5rem solid #444;
+  border-top: 1.5rem solid #ffc560;
 }
 .post-content .highlight tbody {
   display: block;
   padding: 0.5rem;
 }
-.post-content .highlight span,
-.post-content .highlight .line {
-  color: #ccc;
-  font-size: 0.9rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
-}
-.post-content .highlight span::-moz-selection,
-.post-content .highlight .line::-moz-selection {
-  color: #fff;
-  background: #ddd;
-}
-.post-content .highlight span::selection,
-.post-content .highlight .line::selection {
-  color: #fff;
-  background: #ddd;
+.post-content .highlight .gutter {
+  display: none;
 }
 .post-content .highlight .line {
-  height: 1.5rem;
-  line-height: 1.5rem;
+  height: 1.2rem;
+  color: #444;
+  font-size: 14px;
+  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
+  line-height: 1.2rem;
 }
 .post-content .html .name {
-  color: #e06c75;
+  color: #e96900;
 }
 .post-content .html .attr {
-  color: #e8bb5e;
+  color: #ffc560;
 }
 .post-content .html .string {
-  color: #98c379;
+  color: #60c611;
 }
 .post-content .html .comment {
-  color: #888;
+  color: #aaa;
 }
 .post-content .javascript .keyword {
-  color: #ee82ee;
+  color: #e96900;
 }
 .post-content .javascript .string {
-  color: #98c379;
-}
-.post-content .javascript .number {
-  color: #f08080;
+  color: #60c611;
 }
 .post-content .javascript .comment {
-  color: #888;
+  color: #aaa;
 }
 .post-content .javascript .built_in {
-  color: #f08080;
-}
-.post-content .bash .string {
-  color: #98c379;
+  color: #e96900;
 }
 .read-more-link {
-  text-align: center;
   margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 .read-more-link a {
-  padding: 0.5rem;
-  color: #555;
-  border: 1px solid #555;
-  border-radius: 5px;
+  padding: 2px 6px;
+  color: #444;
+  outline: 1px solid #000;
 }
 footer {
   margin: 1rem;
@@ -441,11 +444,10 @@ footer {
   border-top: 1px dashed #ddd;
 }
 footer .owner {
-  font-size: 14px;
   color: #aaa;
 }
 footer .owner a {
-  color: #ffa500;
+  color: #ffc560;
 }
 .archive-container {
   width: 90%;
@@ -453,8 +455,8 @@ footer .owner a {
 }
 .archive-container .archive-year {
   font-size: 1.5rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
-  color: #ffa500;
+  font-family: 'Source Sans Pro', 'Microsoft YaHei', 'Hiragino Sans GB';
+  color: #444;
 }
 .archive-container .archive-year:nth-child(n+2) {
   margin-top: 2rem;
@@ -472,19 +474,19 @@ footer .owner a {
   margin-right: 0.5rem;
   color: #aaa;
   font-size: 1rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
   white-space: nowrap;
 }
 .archive-container .archive-item .archive-title {
-  color: #555;
+  color: #444;
   line-height: 1.5rem;
-  word-break: break-all;
-  -webkit-transition: color 0.2s ease-out;
-  -o-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
+  word-break: break-word;
+  -webkit-transition: color 100ms ease-out;
+  -o-transition: color 100ms ease-out;
+  transition: color 100ms ease-out;
 }
 .archive-container .archive-item .archive-title:hover {
-  color: #ffa500;
+  color: #ffc560;
 }
 .works-container {
   width: 90%;
@@ -500,20 +502,12 @@ footer .owner a {
   margin-bottom: 0.8rem;
 }
 .works-container .work-type-container .work-type {
-  color: #ffa500;
+  color: #444;
   font-size: 1.4rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
 }
 .works-container .work-type-container .more-btn {
-  height: 1.3rem;
   margin-left: 1rem;
-  padding: 0 6px;
-  font-size: 1.1rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
-  line-height: 1.3rem;
-  color: #ffa500;
-  border: 1px solid #ffa500;
-  border-radius: 4px;
+  color: #aaa;
 }
 .works-container .work-item-container {
   display: -webkit-box;
@@ -586,7 +580,7 @@ footer .owner a {
 }
 .works-container .work-item-container .work-item .work-detail .work-name {
   padding: 1rem 0;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
+  color: #444;
   text-align: center;
 }
 .about-container {
@@ -601,7 +595,6 @@ footer .owner a {
   -ms-flex-align: center;
   align-items: center;
   padding: 1rem;
-  font-family: Consolas, 'Consolas Backup', "Source Code Pro", monospace, "Courier New";
 }
 .about-container .about-avatar {
   max-height: 256px;
@@ -610,8 +603,8 @@ footer .owner a {
 .about-container .about-item {
   margin: 1rem 0;
   line-height: 1.5rem;
-  color: #555;
+  color: #444;
 }
 .about-container .about-item a {
-  color: #ffa500;
+  color: #ffc560;
 }

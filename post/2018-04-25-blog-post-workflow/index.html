@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   
-  <title>发表文章工作流</title>
+  <title>Blog Post Workflow</title>
   <meta name="author" content="Timesient">
   <meta name="description" content="Timesient&#39;s Blog">
   <meta name="keywords" content="Timesient, Blog">
-  <meta property="og:title" content="发表文章工作流">
+  <meta property="og:title" content="Blog Post Workflow">
   <meta property="og:type" content="article">
   <meta property="og:url" content="http://timesient.github.io/post/2018-04-25-blog-post-workflow/">
   <meta property="og:site_name" content="Timesient">
@@ -36,64 +36,24 @@
 <article class="post">
   <header class="post-header">
     
-      <h1 class="post-title"><a>发表文章工作流</a></h1>
+      <h1 class="post-title"><a>Blog Post Workflow</a></h1>
       <p class="post-detail">Posted on Apr 25, 2018</p>
     
   </header>
   
-    <div class="post-content"><p>步骤如下：</p>
+    <div class="post-content"><p>Steps:</p>
 <ol>
-<li>在根目录下<code>hexo new example</code></li>
-<li>启动hexo实时编译服务器<code>hexo s</code></li>
-<li>右键根目录空白区域，使用<code>VSCode</code>打开工程</li>
-<li>注释掉<code>themes/timesient/source/js/main.js</code>中与<code>loadingImgBase64</code>有关的2行注释掉</li>
-<li>工程中打开<code>source/_posts/example.md</code>开始书写；同时打开浏览器<code>localhost:4000</code>实时查看文章书写进度</li>
-<li>注意将<code>example.md</code>中开头的<code>title</code>内容换成文章的标题</li>
-<li>在需要插入<code>Read More</code>的地方插入<code>&lt;!--more--&gt;</code></li>
-<li>书写完毕后，将<code>main.js</code>中注释的两行取消注释</li>
-<li>关闭<code>VSCode</code></li>
-<li>根目录下打开<code>bash</code>，执行<code>npm run build</code>生成<code>public</code>文件夹</li>
-<li>执行<code>hexo d</code>将文章提交到远端仓库</li>
+<li>generate new post: <code>hexo new example</code></li>
+<li>activate hexo live server: <code>hexo s</code> and visit localhost:4000 in browser</li>
+<li>write article content in source/_posts/example.md, meanwhile check the content in browser</li>
+<li>remember to edit the title in example.md</li>
+<li>remember to insert <code>&lt;!--more--&gt;</code> where you want to show <code>Read More</code> button</li>
+<li>run <code>npm run build</code> in bash</li>
+<li>run <code>hexo d</code> to deploy changes<a id="more"></a>
+</li>
 </ol>
-<a id="more"></a>
-<p>以下是文章内容的一些测试：</p>
-<h2 id="文本区"><a href="#文本区" class="headerlink" title="文本区"></a>文本区</h2><p><a href="https://love2.io/@hfpp2012/doc/webpack-tutorial/" target="_blank" rel="noopener">webpack tutorial</a><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">link description</span>](<span class="link">URI</span>)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<blockquote>
-<p>This is a Blockquote<br>line 2<br>line 3</p>
-</blockquote>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; blockquote content</span></span><br><span class="line">line 2</span><br><span class="line">line 3</span><br></pre></td></tr></table></figure>
-<hr>
-<p>This is a list</p>
-<ul>
-<li>A</li>
-<li>B<ul>
-<li>B1<ul>
-<li>B11</li>
-</ul>
-</li>
-<li>B2<ul>
-<li>B21</li>
-<li>B22</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>C</li>
-</ul>
-<h2 id="代码区"><a href="#代码区" class="headerlink" title="代码区"></a>代码区</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">dir</span>=<span class="string">"ltr"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"stage"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dice-face front"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dice-face left"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dice-face top"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dice-face right"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dice-face back"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dice-face bottom"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.front</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(100px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.back</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(-100px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(-90deg) <span class="built_in">translateZ</span>(100px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(90deg) <span class="built_in">translateZ</span>(100px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.top</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(90deg) <span class="built_in">translateZ</span>(100px);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bottom</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(-90deg) <span class="built_in">translateZ</span>(100px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// A transparent png with size: 1 x 360</span></span><br><span class="line"><span class="keyword">let</span> loadingImageBase64 = <span class="string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'start replacing'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> paths = [<span class="string">'public/index.html'</span>];</span><br><span class="line"><span class="keyword">const</span> postNames = fs.readdirSync(<span class="string">"public/post/"</span>);</span><br><span class="line">postNames.forEach(<span class="function">(<span class="params">name</span>) =&gt;</span> &#123;</span><br><span class="line">  paths.push(<span class="string">`public/post/<span class="subst">$&#123;name&#125;</span>/index.html`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> pageNums = fs.readdirSync(<span class="string">"public/page/"</span>);</span><br><span class="line">pageNums.forEach(<span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">  paths.push(<span class="string">`public/page/<span class="subst">$&#123;num&#125;</span>/index.html`</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">paths.forEach(<span class="function">(<span class="params">path</span>) =&gt;</span> &#123;</span><br><span class="line">  fs.readFile(path, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="keyword">let</span> content = data.toString().replace(<span class="regexp">/img src="([\S ]*)"/g</span>, <span class="string">`img src="<span class="subst">$&#123;loadingImageBase64&#125;</span>" data-original="$1"`</span>);</span><br><span class="line">    fs.writeFile(path, content, () =&gt; &#123;&#125;);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'replacing ended'</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="图片区"><a href="#图片区" class="headerlink" title="图片区"></a>图片区</h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/0.jpg" title="image-0">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/1.jpg" title="image-1">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/2.jpg" title="image-2">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/3.jpg" title="image-3">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/4.jpg" title="image-4">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/5.jpg" title="image-5">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/6.jpg" title="image-6">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/7.jpg" title="image 7">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/8.jpg" title="image 8">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoAQMAAACsVwPsAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAA5JREFUKM9jGAWjYBgBAALQAAEkeoYnAAAAAElFTkSuQmCC" data-original="/post/2018-04-25-blog-post-workflow/9.jpg" title="image 9"></div>
+<p>Wait few seconds and then check your new article on your blog.</p>
+</div>
   
 </article>
 
