@@ -27,6 +27,7 @@ figure {
   padding: 0;
 }
 html {
+  font-size: 16px;
   font-family: 'Source Sans Pro', 'Microsoft YaHei', 'Hiragino Sans GB';
   height: 100%;
 }
@@ -227,58 +228,44 @@ body::-webkit-scrollbar-track {
 .post-content h1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  padding-left: 8px;
   color: #444;
   font-size: 1.8rem;
   font-weight: normal;
-  border-left: 4px solid #ffc560;
-  background-color: #f8f8f8;
 }
 .post-content h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  padding-left: 8px;
   color: #444;
   font-size: 1.6rem;
   font-weight: normal;
-  border-left: 4px solid #ffc560;
-  background-color: #f8f8f8;
 }
 .post-content h3 {
-  margin: 0.8rem 0;
-  padding-left: 8px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   color: #444;
   font-size: 1.4rem;
   font-weight: normal;
-  border-left: 4px solid #ffc560;
-  background-color: #f8f8f8;
 }
 .post-content h4 {
-  margin: 0.6rem 0;
-  padding-left: 8px;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
   color: #444;
   font-size: 1.2rem;
   font-weight: normal;
-  border-left: 4px solid #ffc560;
-  background-color: #f8f8f8;
 }
 .post-content h5 {
-  margin: 0.6rem 0;
-  padding-left: 8px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: #444;
   font-size: 1rem;
   font-weight: normal;
-  border-left: 4px solid #ffc560;
-  background-color: #f8f8f8;
 }
 .post-content h6 {
-  margin: 0.6rem 0;
-  padding-left: 8px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: #444;
   font-size: 1rem;
   font-weight: normal;
-  border-left: 4px solid #ffc560;
-  background-color: #f8f8f8;
 }
 .post-content hr {
   margin: 1rem 0;
@@ -316,13 +303,13 @@ body::-webkit-scrollbar-track {
 }
 .post-content code {
   margin: 0 2px;
-  padding: 3px 5px;
+  padding: 2px 4px;
   border-radius: 3px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #e96900;
   background-color: #f8f8f8;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
 }
 .post-content ul,
@@ -358,51 +345,40 @@ body::-webkit-scrollbar-track {
   overflow: auto;
   background-color: #f8f8f8;
 }
-.post-content .highlight:before {
-  content: attr(data-code-type);
-  position: absolute;
-  top: 4px;
-  left: 0.5rem;
-  color: #fff;
-  font-size: 14px;
-  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
-}
 .post-content .highlight::-webkit-scrollbar-track {
   background-color: #ddd;
 }
 .post-content .highlight::-webkit-scrollbar {
-  height: 10px;
+  height: 8px;
 }
 .post-content .highlight::-webkit-scrollbar-thumb {
-  background-color: #ffc560;
+  background-color: #aaa;
 }
 .post-content .highlight table {
   width: 100%;
   border-spacing: 0;
-  border-top: 1.5rem solid #ffc560;
 }
 .post-content .highlight tbody {
   display: block;
-  padding: 0.5rem;
 }
 .post-content .highlight .gutter {
   display: none;
 }
-.post-content .highlight .line {
+.post-content .highlight .code {
+  padding: 1rem;
+}
+.post-content .highlight .code .line {
   height: 1.2rem;
   color: #444;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
   line-height: 1.2rem;
 }
 .post-content .html .name {
   color: #e96900;
 }
-.post-content .html .attr {
-  color: #ffc560;
-}
 .post-content .html .string {
-  color: #60c611;
+  color: #00b265;
 }
 .post-content .html .comment {
   color: #aaa;
@@ -411,7 +387,7 @@ body::-webkit-scrollbar-track {
   color: #e96900;
 }
 .post-content .javascript .string {
-  color: #60c611;
+  color: #00b265;
 }
 .post-content .javascript .comment {
   color: #aaa;
