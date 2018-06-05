@@ -303,7 +303,10 @@ body::-webkit-scrollbar-track {
 }
 .post-content code {
   margin: 0 2px;
-  padding: 2px 4px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
   border-radius: 3px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
