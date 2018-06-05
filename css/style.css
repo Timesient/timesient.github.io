@@ -302,13 +302,16 @@ body::-webkit-scrollbar-track {
   line-height: 2rem;
 }
 .post-content code {
+  display: inline-block;
+  height: 1rem;
   margin: 0 2px;
-  padding: 4px 4px 0 4px;
+  padding: 0 4px;
   border-radius: 3px;
   color: #e96900;
   background-color: #f8f8f8;
   font-size: 0.8rem;
   font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
+  line-height: 1rem;
 }
 .post-content ul,
 .post-content ol {
