@@ -6,6 +6,10 @@
   font-family: 'Source Sans Pro';
   src: url("../assets/fonts/SourceSansPro.ttf");
 }
+@font-face {
+  font-family: 'Source Han Sans CN Light';
+  src: url("../assets/fonts/SourceHanSansCN-Light.otf");
+}
 html,
 body,
 h1,
@@ -28,7 +32,7 @@ figure {
 }
 html {
   font-size: 16px;
-  font-family: 'Source Sans Pro', 'Microsoft YaHei', 'Hiragino Sans GB';
+  font-family: 'Source Sans Pro', 'Source Han Sans CN Light', 'Microsoft YaHei';
   height: 100%;
 }
 a {
@@ -104,7 +108,7 @@ body::-webkit-scrollbar-track {
   color: #aaa;
 }
 .header nav a:hover {
-  color: #ffc560;
+  color: #ffad21;
 }
 .container {
   margin: 5rem auto;
@@ -223,7 +227,7 @@ body::-webkit-scrollbar-track {
   font-size: 14px;
 }
 .post-content a {
-  color: #ffc560;
+  color: #ffad21;
 }
 .post-content h1 {
   margin-top: 2rem;
@@ -302,16 +306,27 @@ body::-webkit-scrollbar-track {
   line-height: 2rem;
 }
 .post-content code {
+/* display: inline-block
+    height: 1.2rem
+    margin: 0 2px
+    padding: 0 4px
+    border-radius: 3px
+    color: $deep-orange
+    background-color: $grey-f8
+    font-size: 0.8rem
+    font-family: $monospace
+    line-height: 1.2rem */
   display: inline-block;
-  height: 1.2rem;
-  margin: 0 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 1.4rem;
+  margin: 0 4px;
   padding: 0 4px;
-  border-radius: 3px;
-  color: #e96900;
   background-color: #f8f8f8;
+  border: 1px solid #aaa;
+  line-height: 1.4rem;
   font-size: 0.8rem;
-  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
-  line-height: 1.2rem;
+  font-family: 'Consolas', 'monospace', 'Source Han Sans CN Light';
 }
 .post-content ul,
 .post-content ol {
@@ -345,6 +360,7 @@ body::-webkit-scrollbar-track {
   margin: 1rem 0;
   overflow: auto;
   background-color: #f8f8f8;
+  border: 1px solid #aaa;
 }
 .post-content .highlight::-webkit-scrollbar-track {
   background-color: #ddd;
@@ -371,11 +387,11 @@ body::-webkit-scrollbar-track {
 .post-content .highlight .code .line {
   color: #444;
   font-size: 0.8rem;
-  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
+  font-family: 'Consolas', 'monospace', 'Source Han Sans CN Light';
   line-height: 1.3rem;
 }
 .post-content .html .name {
-  color: #e96900;
+  color: #ff7200;
 }
 .post-content .html .string {
   color: #00b265;
@@ -384,7 +400,7 @@ body::-webkit-scrollbar-track {
   color: #aaa;
 }
 .post-content .javascript .keyword {
-  color: #e96900;
+  color: #ff7200;
 }
 .post-content .javascript .string {
   color: #00b265;
@@ -393,7 +409,7 @@ body::-webkit-scrollbar-track {
   color: #aaa;
 }
 .post-content .javascript .built_in {
-  color: #e96900;
+  color: #ff7200;
 }
 .read-more-link {
   margin-top: 2rem;
@@ -423,7 +439,7 @@ footer .owner {
   color: #aaa;
 }
 footer .owner a {
-  color: #ffc560;
+  color: #ffad21;
 }
 .archive-container {
   width: 90%;
@@ -431,7 +447,7 @@ footer .owner a {
 }
 .archive-container .archive-year {
   font-size: 1.5rem;
-  font-family: 'Source Sans Pro', 'Microsoft YaHei', 'Hiragino Sans GB';
+  font-family: 'Source Sans Pro', 'Source Han Sans CN Light', 'Microsoft YaHei';
   color: #444;
 }
 .archive-container .archive-year:nth-child(n+2) {
@@ -450,7 +466,7 @@ footer .owner a {
   margin-right: 0.5rem;
   color: #aaa;
   font-size: 1rem;
-  font-family: 'Consolas', 'Source Code Pro', 'monospace', 'Courier New';
+  font-family: 'Consolas', 'monospace', 'Source Han Sans CN Light';
   white-space: nowrap;
 }
 .archive-container .archive-item .archive-title {
@@ -462,7 +478,7 @@ footer .owner a {
   transition: color 100ms ease-out;
 }
 .archive-container .archive-item .archive-title:hover {
-  color: #ffc560;
+  color: #ffad21;
 }
 .works-container {
   width: 90%;
@@ -582,5 +598,5 @@ footer .owner a {
   color: #444;
 }
 .about-container .about-item a {
-  color: #ffc560;
+  color: #ffad21;
 }
