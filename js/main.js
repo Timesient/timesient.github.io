@@ -1,1 +1,1 @@
-"use strict";!function(i){i(".post-content img").each(function(){var a=i(this),t=a.attr("data-original"),e=a.attr("title");a.addClass("lazy"),a.wrap('<div class="img-wrapper"></div>'),a.after('<p class="img-caption">'+e+"</p>"),a.wrap('<a href="'+t+'" title="'+e+'" class="fancybox" rel="article"></a>')}),i(".fancybox").fancybox(),i(".lazy").lazyload({effect:"fadeIn",threshold:200})}(jQuery);
+"use strict";
