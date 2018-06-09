@@ -306,27 +306,26 @@ body::-webkit-scrollbar-track {
   line-height: 2rem;
 }
 .post-content code {
-/* display: inline-block
-    height: 1.2rem
-    margin: 0 2px
-    padding: 0 4px
-    border-radius: 3px
-    color: $deep-orange
-    background-color: $grey-f8
-    font-size: 0.8rem
-    font-family: $monospace
-    line-height: 1.2rem */
   display: inline-block;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 1.4rem;
-  margin: 0 4px;
+  height: 1.2rem;
+  margin: 0 2px;
   padding: 0 4px;
+  border-radius: 3px;
+  color: #ff7200;
   background-color: #f8f8f8;
-  border: 1px solid #aaa;
-  line-height: 1.4rem;
   font-size: 0.8rem;
   font-family: 'Consolas', 'monospace', 'Source Han Sans CN Light';
+  line-height: 1.2rem;
+/* display: inline-block
+    box-sizing: border-box
+    height: 1.4rem
+    margin: 0 4px
+    padding: 0 4px
+    background-color: $grey-f8
+    border: 1px solid #aaa
+    line-height: 1.4rem
+    font-size: 0.8rem
+    font-family: $monospace */
 }
 .post-content ul,
 .post-content ol {
@@ -360,7 +359,6 @@ body::-webkit-scrollbar-track {
   margin: 1rem 0;
   overflow: auto;
   background-color: #f8f8f8;
-  border: 1px solid #aaa;
 }
 .post-content .highlight::-webkit-scrollbar-track {
   background-color: #ddd;
